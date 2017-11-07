@@ -6,7 +6,7 @@ $conn = getDatabaseConnection();
 
 function getDatabaseConnection() {
     $host = 'localhost';
-    $dbname = 'tcp';
+    $dbname = 'teamproject';
     $username = 'root';
     $password = '';
     
@@ -93,7 +93,7 @@ function displayItems() {
 	
 	$records = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	
-	echo "<table>
+	echo "<table class='table table-hover'>
 			<tr>
 				<th>Item Name</th>
 				<th>Price</th>
@@ -118,74 +118,81 @@ function displayItems() {
 <html>
 	<head>
 		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Online Shopping Catalog</title>
-		<style>
-			@import url("css/style.css");
-			
-			#fillForm {
-				float: left;
-				margin-right: 100px;
-			}
-		</style>
+        <link  href="css/styles.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 	</head>
 
 	<body>
-		<div class="jumbotron">
-			<h1>Online Shopping Catalog</h1>
-			<form action="cart.php">
-				<input type="submit" name="cart" value="My Cart"/>
-			</form>
-		</div>
-		
-		<div id="content">
-			<div id="fillForm">
-				<br/>
-				
-				<form>
-					<table>
-						<tr>
-							<td><strong>Search: </strong></td>
-							<td><input type="text" name="name"/></td>
-							<td><input type="submit" name="go" value="Search"/></td>
-						</tr>
-	
-						<tr>				
-							<td><strong>Category:</strong></td>
-							<td>
-								<select name="category">
-									<option value="">Select One</option>
-									<?=getItemTypes()?>
-								</select>
-							</td>
-						</tr>
-						
-						<tr>
-							<td><strong>Age Group:</strong></td>
-							<td>
-								<select name="agegroup">
-									<option value="">Select One</option>
-									<?=getItemGroups()?>
-								</select>
-							</td>
-						</tr>
-						
-						<tr>
-							<td><strong>By Price:</strong></td>
-							<td><input type="radio" name="price" value="low" id="lowToHigh"><label for="lowToHigh">Lowest First</label></td>
-							<td><input type="radio" name="price" value="high" id="highToLow"><label for="highToLow">Highest First</label></td>
-						</tr>
-					</table>
+		<div >
+			<div id="main" class="jumbotron text-center" >
+				<h1>Online Shopping Catalog</h1>
+				<form action="cart.php">
+					<input type="submit" class="btn" name="cart" value="My Cart"/>
 				</form>
-				
-				<hr>
-				
-				<?=displayItems()?>
 			</div>
 			
-			<div id="itemInfo">
-				<h2>Item Info</h2>
-				<iframe name="itemInfo" width=525 height=400></iframe>
+			<div class="container">
+				<div id="fillform" class="row">
+					<div id="col-1" class="col-sm-4">
+						<div class="form-group">
+						<form>
+							<table>
+								<tr>
+									<td><label for="inputsm">Search: </label></td>
+									<td><input type="text" class="form-control input-sm" id="inputsm" name="name"/></td>
+									<td><input type="submit" class="btn" name="go" value="Search"/></td>
+								</tr>
+								
+								<tr>				
+									<td><label for="inputsm">Category:</label></td>
+									<td>
+										<select name="category" class="form-control">
+											<option value="">Select One</option>
+											<?=getItemTypes()?>
+										</select>
+									</td>
+								</tr>
+								<br>
+								<tr>
+									<td><label for="inputsm">Age Group:</label></td>
+									<td>
+										<select name="agegroup" class="form-control">
+											<option value="">Select One</option>
+											<?=getItemGroups()?>
+										</select>
+									</td>
+								</tr>
+								
+								<tr>
+									<td><label for="inputsm">By Price:</label></td>
+									<td><input type="radio" name="price" value="low" id="lowToHigh"><label for="lowToHigh" class="radio-inline">Lowest First</label></td>
+									<td><input type="radio" name="price" value="high" id="highToLow"><label for="highToLow" class="radio-inline">Highest First</label></td>
+								</tr>
+							</table>
+						</form>
+						</div>
+						<hr>
+					</div>
+						
+					<div id="col-2" class="col-sm-5">
+							
+						<?=displayItems()?>	
+						
+					</div>
+					
+					<div id="col-3" class="col-sm-4">
+						<h2>Item Info</h2>
+				        <iframe name="itemInfo" width=525 height=400></iframe>
+					</div>
+					
+				</div>
+				
 			</div>
 		</div>
+		
 	</body>
 </html>
