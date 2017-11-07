@@ -103,7 +103,7 @@ function displayItems() {
 			
 	foreach($records as $r) {
 		echo "<tr>";
-        echo "<td>" .$r['name']. "</td>";
+        echo "<td><a target='itemInfo' href='itemInfo.php?=itemId='".$r['itemId']."'>".$r['name']."</a></td>";
         echo "<td>" .$r['price']. "</td>";
         echo "<td>" .$r['categoryName']. "</td>";
         echo "<td>" .$r['ageGroup']. "</td>";
@@ -119,6 +119,14 @@ function displayItems() {
 	<head>
 		<meta charset="utf-8"/>
 		<title>Online Shopping Catalog</title>
+		<style>
+			@import url("css/style.css");
+			
+			#fillForm {
+				float: left;
+				margin-right: 100px;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -130,47 +138,54 @@ function displayItems() {
 		</div>
 		
 		<div id="content">
-			<br/>
+			<div id="fillForm">
+				<br/>
+				
+				<form>
+					<table>
+						<tr>
+							<td><strong>Search: </strong></td>
+							<td><input type="text" name="name"/></td>
+							<td><input type="submit" name="go" value="Search"/></td>
+						</tr>
+	
+						<tr>				
+							<td><strong>Category:</strong></td>
+							<td>
+								<select name="category">
+									<option value="">Select One</option>
+									<?=getItemTypes()?>
+								</select>
+							</td>
+						</tr>
+						
+						<tr>
+							<td><strong>Age Group:</strong></td>
+							<td>
+								<select name="agegroup">
+									<option value="">Select One</option>
+									<?=getItemGroups()?>
+								</select>
+							</td>
+						</tr>
+						
+						<tr>
+							<td><strong>By Price:</strong></td>
+							<td><input type="radio" name="price" value="low" id="lowToHigh"><label for="lowToHigh">Lowest First</label></td>
+							<td><input type="radio" name="price" value="high" id="highToLow"><label for="highToLow">Highest First</label></td>
+						</tr>
+					</table>
+				</form>
+				
+				<hr>
+				
+				<?=displayItems()?>
+			</div>
 			
-			<form>
-				<table>
-					<tr>
-						<td><strong>Search: </strong></td>
-						<td><input type="text" name="name"/></td>
-						<td><input type="submit" name="go" value="Search"/></td>
-					</tr>
-
-					<tr>				
-						<td><strong>Category:</strong></td>
-						<td>
-							<select name="category">
-								<option value="">Select One</option>
-								<?=getItemTypes()?>
-							</select>
-						</td>
-					</tr>
-					
-					<tr>
-						<td><strong>Age Group:</strong></td>
-						<td>
-							<select name="agegroup">
-								<option value="">Select One</option>
-								<?=getItemGroups()?>
-							</select>
-						</td>
-					</tr>
-					
-					<tr>
-						<td><strong>By Price:</strong></td>
-						<td><input type="radio" name="price" value="low" id="lowToHigh"><label for="lowToHigh">Lowest First</label></td>
-						<td><input type="radio" name="price" value="high" id="highToLow"><label for="highToLow">Highest First</label></td>
-					</tr>
-				</table>
-			</form>
-			
-			<hr>
-			
-			<?=displayItems()?>
+			<div id="itemInfo">
+				<h2>Item Info</h2>
+				<iframe name="itemInfo" width=525 height=400></iframe>
+			</div>
 		</div>
 	</body>
 </html>
