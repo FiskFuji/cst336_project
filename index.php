@@ -137,6 +137,7 @@ function displayItems() {
 			
 			<div class="container">
 				<div id="fillform" class="row">
+					
 					<div id="col-1" class="col-sm-4">
 						<div class="form-group">
 						<form>
@@ -178,7 +179,7 @@ function displayItems() {
 						<hr>
 					</div>
 						
-					<div id="col-2" class="col-sm-5">
+					<div id="col-2" class="col-sm-4">
 							
 						<?=displayItems()?>	
 						
@@ -186,7 +187,7 @@ function displayItems() {
 					
 					<div id="col-3" class="col-sm-4">
 						<h2>Item Info</h2>
-				        <iframe name="itemInfo" width=525 height=400></iframe>
+				       <iframe name="itemInfo" width=525 height=400></iframe>
 					</div>
 					
 				</div>
