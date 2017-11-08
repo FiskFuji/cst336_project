@@ -3,8 +3,6 @@ session_start();
 
 $conn = getDatabaseConnection();
 
-// do other stuff
-
 function getDatabaseConnection() {
     $host = 'localhost';
     $dbname = 'tcp';
