@@ -7,7 +7,7 @@ $conn = getDatabaseConnection();
 
 function getDatabaseConnection() {
     $host = 'localhost';
-    $dbname = 'teamproject';
+    $dbname = 'tcp';
     $username = 'root';
     $password = '';
     
@@ -108,8 +108,8 @@ function displayItems() {
         echo "<td> $" .$r['price']. "</td>";
         echo "<td>" .$r['categoryName']. "</td>";
         echo "<td>" .$r['ageGroup']. "</td>";
-        echo "<form action='cart.php' method='get'>";
-        echo "<td> <button type='submit' name='addToCart' value=".$r['itemId'] .">Add to Cart</button></td>";
+        echo "<form action='addToCart.php' method='GET'>";
+        echo "<td> <button type='submit' name='addCart' value=".$r['itemId'] .">Add to Cart</button></td>";
         echo "</form>";
         echo "</tr>";
 	}
