@@ -109,7 +109,7 @@ function displayItems() {
         echo "<td>" .$r['categoryName']. "</td>";
         echo "<td>" .$r['ageGroup']. "</td>";
         echo "<form action='cart.php' method='get'>";
-        echo "<td> <input type='submit' name=". $r['itemId']. " value='Add To Cart'/></td>";
+        echo "<td> <button type='submit' name='addToCart' value=".$r['itemId'] .">Add to Cart</button></td>";
         echo "</form>";
         echo "</tr>";
 	}
