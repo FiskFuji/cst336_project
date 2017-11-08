@@ -104,7 +104,7 @@ function displayItems() {
 			
 	foreach($records as $r) {
 		echo "<tr>";
-        echo "<td><a target='itemInfo' href='itemInfo.php?=itemId='".$r['itemId']."'>".$r['name']."</a></td>";
+        echo "<td><a target='itemInfo' href='itemInfo.php?itemId=".$r['itemId']."'>".$r['name']."</a></td>";
         echo "<td> $" .$r['price']. "</td>";
         echo "<td>" .$r['categoryName']. "</td>";
         echo "<td>" .$r['ageGroup']. "</td>";
@@ -197,7 +197,7 @@ function displayItems() {
 					
 					<div id="col-3" class="col-sm-4">
 						<h2>Item Info</h2>
-				       <iframe name="itemInfo" width=400 height=400></iframe>
+				       <iframe name="itemInfo" width=450 height=400></iframe>
 					</div>
 					
 				</div>
