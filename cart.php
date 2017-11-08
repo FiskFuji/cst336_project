@@ -74,7 +74,7 @@ function displayItems(){
     
 }
 else{
-    echo "<h2>Cart is Empty </h2>";
+    echo "<h2 id='cartTittle'>Cart is Empty </h2>";
 }
 }
 
@@ -87,9 +87,9 @@ function clearData(){
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Checkout Page </title>
         <meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Checkout Page </title>
         <link  href="css/styles.css" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -97,19 +97,34 @@ function clearData(){
 	</head>
     </head>
     <body>
-        <div id = "Cart">
+        <div id = "Cart" class="jumbotron text-center">
             <h1>Checkout Items</h1>
-            <?=displayItems()?>
-    
-        
-       <form action = "clearCart.php">
-           <button type='submit'>Clear Cart</button>
-       </form>
-       
-       <form action = "index.php">
-           <input type = "submit" value = "Continue Shopping">
-       </form>
-       
+        </div>
+        <div class="container">
+            <div id="" class="">
+                
+                <div id ="" row1class="col-sm-4">
+                    
+                    <?=displayItems()?>
+                    
+                </div>
+                
+                <div class="col-sm-4">
+                   <tr>
+                       <td>
+                           <form action = "clearCart.php">
+                           <button type="submit" class="btn">Clear Cart</button>
+                           </form>
+                       </td>
+                       <td></td>
+                       <td>
+                           <form action = "index.php">
+                               <input type = "submit" class="btn" value = "Continue Shopping">
+                           </form>
+                       </td>
+                   </tr>
+                </div>
+            </div>
        </div>
 
     </body>

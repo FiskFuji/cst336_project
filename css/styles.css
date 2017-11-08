@@ -7,10 +7,15 @@ div {
      
 }
 
+#cartTitle{
+    text-align:center;
+}
+
 #fillform {
-			
-				margin-right: 0px;
-			}
+
+	
+	margin-right: 0px;
+}
 
 #col-1{
     background-color: gray;
