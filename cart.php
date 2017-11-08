@@ -1,18 +1,22 @@
 <?php
 session_start();
-//fuck im so sorry
-$maxCartSize = 10;
 
-$_SESSION['Cart'] = $_GET;
+$name = $_GET['addToCart'];
+
+array_push($_SESSION['Cart'],$name);
+//Still cant get things to carry over imsorry i have to stop for the night 
+
 
 
 echo $_SESSION['Cart'];
 function displayCart() {
-    $sql = "SELECT * FROM `items` i JOIN `item_category` c JOIN `item_ageGroup` a
+    //display each item in the cart based on the size of Session array
+    for ($i = 0; $i < count($_SESSION['Cart']); $i++) {
+     $sql = "SELECT * FROM `items` i JOIN `item_category` c JOIN `item_ageGroup` a
 			ON i.item_category = c.categoryId AND i.item_ageGroup = a.ageGroupId
-			AND i.itemId = ". $_SESSION['Cart']['itemId'] ."";
+			AND i.itemId = ". $_SESSION['Cart'][$i] ."";
     $stmt = $conn->prepare($sql);
-	$stmt->execute($namedParameters);
+	$stmt->execute();
 	
 	$records = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	
@@ -34,7 +38,9 @@ function displayCart() {
 	}
 	
 	echo "</table>";
+    }
 }
+
 
 ?>
 
@@ -51,5 +57,6 @@ function displayCart() {
     
     <body>
         <a href="index.php" >Home</a>
+        <?php displayCart(); ?>
     </body>
 </html>
