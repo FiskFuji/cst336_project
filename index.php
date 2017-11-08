@@ -107,6 +107,7 @@ function displayItems() {
         echo "<td>" .$r['price']. "</td>";
         echo "<td>" .$r['categoryName']. "</td>";
         echo "<td>" .$r['ageGroup']. "</td>";
+        echo "<td> <button type='button' onClick=\"alert('Item added to cart')\">Add to Cart</button>";
         echo "</tr>";
 	}
 	
