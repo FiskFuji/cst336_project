@@ -1,43 +1,41 @@
-    @import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina');
 div {
     margin:0px;
 }
-#main{
+
+#main {
         font-family: 'Merriweather', serif;
-     
 }
 
-#cartTitle{
+#cartTitle {
     text-align:center;
 }
 
 #fillform {
-
-	
 	margin-right: 0px;
 }
 
-#col-1{
+#col-1 {
     text-align: center;
     background-color: gray;
     margin:0px;
     border:0px;
 }
 
-#col-2{
+#col-2 {
     text-align: center;
     background-color: yellow;
 }
 
-#col-3{
+#col-3 {
     text-align: center;
 }
 
-iframe{
+iframe {
   background-color: red;
 }
 
-#content{
+#content {
     margin-left: auto;
     margin-right: auto;
 }
@@ -68,6 +66,6 @@ iframe{
   }
 }
 
-#Cart{
+#Cart {
   text-align: center;
 }

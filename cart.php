@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 
 function getDatabaseConnection() {
     $host = 'localhost';
@@ -22,8 +20,6 @@ function getDatabaseConnection() {
     
     return $dbConn;
 }
-
-
 
 function displayItems(){
     $totalPrice = 0;
@@ -49,8 +45,6 @@ function displayItems(){
         
         $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
-       
-        			
         foreach($records as $r) {
         	echo "<tr>";
             echo "<td>" .$r['name']. "</td>";
@@ -58,24 +52,19 @@ function displayItems(){
             $totalPrice += $r['price'];
             echo "</tr>";
         }
-        
-    
-    
-        
     }
-     echo "</table>";
+    echo "</table>";
      
-     echo "<table class='table table-hover' border = '2'>";
-    	echo "<tr>";
-        echo "<td>Total Price</td>";
-        echo "<td> $". $totalPrice. "</td>";
-        echo "</tr>";
-   echo "</table>"; 
-    
-}
-else{
-    echo "<h2 id='cartTittle'>Cart is Empty </h2>";
-}
+    echo "<table class='table table-hover' border = '2'>";
+    echo "<tr>";
+    echo "<td>Total Price</td>";
+    echo "<td> $". $totalPrice. "</td>";
+    echo "</tr>";
+    echo "</table>"; 
+    } 
+    else {
+        echo "<h2 id='cartTittle'>Cart is Empty </h2>";
+    }
 }
 
 function clearData(){
@@ -93,7 +82,6 @@ function clearData(){
         <link  href="css/styles.css" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
 	</head>
     </head>
     <body>
