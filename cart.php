@@ -23,6 +23,7 @@ function getDatabaseConnection() {
 
 function displayItems(){
     $totalPrice = 0;
+    $conn = getDatabaseConnection();
     
     if(isset($_SESSION['currentCart'])){
          echo "<table class='table table-hover' border = '1'>
@@ -30,10 +31,8 @@ function displayItems(){
         				<th>Item Name</th>
         				<th>Price</th>
         			</tr>";
+	    
     foreach($_SESSION['currentCart'] as $elements){
-         $conn = getDatabaseConnection();
-
-
         $namedParameters = array(":id" => $elements);
         
         $sql = "SELECT * FROM `items` i JOIN `item_category` c JOIN `item_ageGroup` a
