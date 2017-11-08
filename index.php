@@ -7,7 +7,7 @@ $conn = getDatabaseConnection();
 
 function getDatabaseConnection() {
     $host = 'localhost';
-    $dbname = 'teamproject';
+    $dbname = 'tcp';
     $username = 'root';
     $password = '';
     
@@ -105,7 +105,7 @@ function displayItems() {
 	foreach($records as $r) {
 		echo "<tr>";
         echo "<td><a target='itemInfo' href='itemInfo.php?=itemId='".$r['itemId']."'>".$r['name']."</a></td>";
-        echo "<td>" .$r['price']. "</td>";
+        echo "<td> $" .$r['price']. "</td>";
         echo "<td>" .$r['categoryName']. "</td>";
         echo "<td>" .$r['ageGroup']. "</td>";
         echo "<td> <button type='button'>Add to Cart</button>";

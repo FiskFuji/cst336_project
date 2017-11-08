@@ -33,7 +33,7 @@ div {
 }
 
 .blink {
-  animation-duration: 100ms;    /*blinking speed decreases and increase */
+  animation-duration: 1000ms;    /*blinking speed decreases and increase */
   animation-name: tgle;
   animation-iteration-count: infinite;
 }
