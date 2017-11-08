@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['Cart'] = array();
 $conn = getDatabaseConnection();
 
 // do other stuff
@@ -107,12 +108,14 @@ function displayItems() {
         echo "<td>" .$r['price']. "</td>";
         echo "<td>" .$r['categoryName']. "</td>";
         echo "<td>" .$r['ageGroup']. "</td>";
-        echo "<td> <button type='button' onClick=\"alert('Item added to cart')\">Add to Cart</button>";
+        echo "<td> <button type='button'>Add to Cart</button>";
         echo "</tr>";
 	}
 	
 	echo "</table>";
 }
+
+
 ?>
 
 <!DOCTYPE html>
