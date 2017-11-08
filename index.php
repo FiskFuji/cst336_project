@@ -108,7 +108,9 @@ function displayItems() {
         echo "<td> $" .$r['price']. "</td>";
         echo "<td>" .$r['categoryName']. "</td>";
         echo "<td>" .$r['ageGroup']. "</td>";
-        echo "<td> <button type='button' id='cart' onClick=".addToCart($r['itemId']).">Add to Cart</button>";
+        echo "<form action='cart.php' method='get'>";
+        echo "<td> <input type='submit' name=". $r['itemId']. " value='Add To Cart'/></td>";
+        echo "</form>";
         echo "</tr>";
 	}
 	
@@ -138,13 +140,7 @@ function displayItems() {
 					<input type="submit" class="btn" name="cart" value="My Cart"/>
 				</form>
 			</div>
-				<script type="text/javascript" >
-		function addToCart(val){
-		    $.post("cart.php",{
-		        passedValue:val
-		    });
-		} 
-	</script>
+	
 			<div class="container">
 				<div id="fillform" class="row">
 					
