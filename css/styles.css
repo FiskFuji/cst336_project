@@ -18,12 +18,14 @@ div {
 }
 
 #col-1{
+    text-align: center;
     background-color: gray;
     margin:0px;
     border:0px;
 }
 
 #col-2{
+    text-align: center;
     background-color: yellow;
 }
 

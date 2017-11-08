@@ -116,7 +116,7 @@ function clearData(){
                            <button type="submit" class="btn">Clear Cart</button>
                            </form>
                        </td>
-                       <td></td>
+                       <br>
                        <td>
                            <form action = "index.php">
                                <input type = "submit" class="btn" value = "Continue Shopping">
