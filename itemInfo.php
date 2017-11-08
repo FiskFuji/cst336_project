@@ -33,7 +33,7 @@ $stmt->execute($namedParameters);
 
 $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-echo "<table class='table table-hover'>
+echo "<table class='table table-hover' border = '1'>
 			<tr>
 				<th>Item Name</th>
 				<th>Item Id</th>

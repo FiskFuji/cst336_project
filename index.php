@@ -191,7 +191,7 @@ function displayItems() {
 					
 					<div id="col-3" class="col-sm-4">
 						<h2>Item Info</h2>
-				       <iframe name="itemInfo" width=360 height=400></iframe>
+				       <iframe name="itemInfo" width=450 height=400></iframe>
 					</div>
 					
 				</div>
